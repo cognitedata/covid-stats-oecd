@@ -62,7 +62,7 @@ try:
     df_cases = get_OECD_data("nationalcasedeath")
 
     countries = st.multiselect(
-        "Choose country", sorted(list(set(df_tests.index))), ["Germany"]
+        "Choose country", sorted(list(set(df_tests.index))), ["Germany", "Sweden", "Malta"]
     )
 
     if not countries:
