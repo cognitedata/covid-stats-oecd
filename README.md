@@ -1,7 +1,7 @@
 # covid-stats-oecd
 Visualization of COVID-19 Stats with Streamlit 
 
-## Setup locallay
+## Setup locally
 
 #### Clone repository
 
