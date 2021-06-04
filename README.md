@@ -1,9 +1,7 @@
 # covid-stats-oecd
 Visualization of COVID-19 Stats with Streamlit
 
-## Live Deployment
-
-https://covid-stats-norge.herokuapp.com/
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://covid-stats-norge.herokuapp.com/)
 
 ## Setup locally
 
