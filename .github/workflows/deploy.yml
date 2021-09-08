@@ -22,5 +22,5 @@ jobs:
           gcloud auth configure-docker europe-docker.pkg.dev  # configure Docker credentials
       - name: Build and push
         run: |
-          docker build -t europe-docker.pkg.dev/cognite-inso-sandbox/inso/flasshoff-streamlit-demo:latest Dockerfile
+          docker build -t europe-docker.pkg.dev/cognite-inso-sandbox/inso/flasshoff-streamlit-demo:latest ${{GITHUB_WORKSPACE}}
           docker push europe-docker.pkg.dev/cognite-inso-sandbox/inso/flasshoff-streamlit-demo:latest
