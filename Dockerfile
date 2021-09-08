@@ -1,13 +1,16 @@
-FROM python:3.7
+FROM python:3.7-slim AS builder
 
-WORKDIR /app
+WORKDIR /
 
-COPY requirements.txt ./requirements.txt
+COPY requirements.txt requirements.txt
 
-RUN pip install -r requirements.txt
+ENV PYTHONUNBUFFERED=1
+RUN pip3 install --target=/app -r requirements.txt
+COPY streamlit_app.py /app
 
+FROM gcr.io/distroless/python3-debian10
+COPY --from=builder /app /app
+ENV PYTHONPATH /app
 EXPOSE 8501
 
-COPY streamlit_app.py ./app.py
-
-ENTRYPOINT ["streamlit", "run"]
+ENTRYPOINT [ "streamlit", "run", "/app/streamlit_app.py"]
