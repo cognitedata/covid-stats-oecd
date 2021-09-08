@@ -11,7 +11,10 @@ jobs:
     name: Build Docker image and publish
     runs-on: ubuntu-latest
     steps:
-
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: main
       - uses: google-github-actions/setup-gcloud@master
         with:
           service_account_key: ${{ secrets.GCP_SA_CREDS }}
@@ -22,6 +25,5 @@ jobs:
           gcloud auth configure-docker europe-docker.pkg.dev  # configure Docker credentials
       - name: Build and push
         run: |
-          cd $GITHUB_WORKSPACE
           docker build -t europe-docker.pkg.dev/cognite-inso-sandbox/inso/flasshoff-streamlit-demo:latest .
           docker push europe-docker.pkg.dev/cognite-inso-sandbox/inso/flasshoff-streamlit-demo:latest
