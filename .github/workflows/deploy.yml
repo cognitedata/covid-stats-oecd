@@ -21,4 +21,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: user/app:europe-docker.pkg.dev/cognite-inso-sandbox/inso/flasshoff-streamlit-demo:latest
+          tags: europe-docker.pkg.dev/cognite-inso-sandbox/inso/flasshoff-streamlit-demo:latest
