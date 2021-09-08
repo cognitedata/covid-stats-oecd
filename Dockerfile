@@ -8,6 +8,8 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8501
 
-COPY streamlit_app.py ./app.py
+COPY streamlit_app.py streamlit_app.py
 
 ENTRYPOINT ["streamlit", "run"]
+
+CMD ["streamlit_app.py"]
