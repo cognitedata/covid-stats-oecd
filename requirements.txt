@@ -1,4 +1,4 @@
 altair==4.1.0
 streamlit==0.82.0
 pandas==1.2.4
-urllib3==1.26.5
+urllib3==1.26.17
